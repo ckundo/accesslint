@@ -4,9 +4,16 @@ var accesslint = (function() {
   var rules = [
     {
       code: 'ALT01',
-      tagName: 'img',
+      tagNames: ['img'],
       assertion: function(node) {
         return !node.hasAttribute('alt') && node.getAttribute('role') !== 'presentation'
+      }
+    },
+    {
+      code: 'ALT02',
+      tagNames: ['input', 'textarea'],
+      assertion: function(node) {
+        return document.querySelector('label[for="' + node.getAttribute('id') + '"]') === null
       }
     }
   ];
@@ -22,7 +29,7 @@ var accesslint = (function() {
     rules.forEach(function(rule) {
       var result = { rule: rule };
       var failing = [];
-      var nodes = document.querySelectorAll(rule.tagName);
+      var nodes = document.querySelectorAll(rule.tagNames.join(', '));
       var nodeArray = objectToArray(nodes);
 
       nodeArray.forEach(function(node) {

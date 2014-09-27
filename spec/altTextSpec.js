@@ -1,7 +1,7 @@
 var expect = chai.expect;
 
 describe('Alt text', function() {
-  var fixture, container, results;
+  var container, results;
 
   container = document.createElement('div');
   document.body.appendChild(container);
