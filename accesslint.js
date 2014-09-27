@@ -11,7 +11,7 @@ var accesslint = (function() {
     },
     {
       code: 'ALT02',
-      tagNames: ['input', 'textarea'],
+      tagNames: ['input', 'textarea', 'select'],
       assertion: function(node) {
         return document.querySelector('label[for="' + node.getAttribute('id') + '"]') === null
       }
