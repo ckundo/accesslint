@@ -1,0 +1,22 @@
+{
+  "name": "accesslint",
+  "version": "0.0.0",
+  "description": "Identify accessibility errors in your code.",
+  "main": "accesslint.js",
+  "scripts": {
+    "test": "karma run"
+  },
+  "keywords": [
+    "accessibility",
+    "test",
+    "testing"
+  ],
+  "author": "Cameron Cundiff",
+  "license": "MIT",
+  "devDependencies": {
+    "karma": "~0.12.23",
+    "mocha": "~1.21.4",
+    "karma-mocha": "~0.1.9",
+    "karma-chrome-launcher": "~0.1.4"
+  }
+}
